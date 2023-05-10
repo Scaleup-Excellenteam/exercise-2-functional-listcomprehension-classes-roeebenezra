@@ -63,7 +63,7 @@ class PostOffice:
         user_box = self.boxes[username]
         matching_messages = []
         for message in user_box:
-            if query in message['body'] or query in message['sender']:
+            if query in message['body'] or query in message['title']:
                 matching_messages.append(message)
         return matching_messages
 
@@ -78,9 +78,11 @@ if __name__ == '__main__':
     po.send_message('charlie', 'alice', 'urgent message!', urgent=True)
     po.send_message('bob', 'charlie', 'important message!')
 
+    print('\ntest read_inbox:')
     # read some messages from inboxes
     print(po.read_inbox('bob'))
     print(po.read_inbox('charlie', 1))
 
+    print('\ntest search_inbox:')
     # search for messages with a keyword
     print(po.search_inbox('alice', 'urgent'))
