@@ -15,6 +15,7 @@ def timer(f, *args, **kwargs):
     print("Execution time: {:.6f} seconds".format(end_time - start_time))
 
 
-timer(print, "Hello")
-timer(zip, [1, 2, 3], [4, 5, 6])
-timer("Hi {name}".format, name="Bug")
+if __name__ == '__main__':
+    timer(print, "Hello")
+    timer(zip, [1, 2, 3], [4, 5, 6])
+    timer("Hi {name}".format, name="Bug")

@@ -16,6 +16,7 @@ def count_words(text):
     return word_lengths
 
 
-text = "This is a sample sample text, text with words of different lengths! Let's see if our function counts them correctly."
-word_lengts = count_words(text)
-print(word_lengts)
+if __name__ == '__main__':
+    text = "This is a sample sample text, text with words of different lengths! Let's see if our function counts them correctly."
+    word_lengts = count_words(text)
+    print(word_lengts)

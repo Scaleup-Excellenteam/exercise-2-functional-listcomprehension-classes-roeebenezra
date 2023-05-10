@@ -1,7 +1,9 @@
 import functools
 
+
 class TypeErrorWithMessage(TypeError):
     pass
+
 
 def check_argument_type(required_type):
     """
@@ -13,6 +15,7 @@ def check_argument_type(required_type):
     :return: A decorator that checks the argument type of a function.
     :rtype: callable
     """
+
     def decorator(func):
         @functools.wraps(func)
         def wrapper(arg):
@@ -26,7 +29,9 @@ def check_argument_type(required_type):
             if not isinstance(arg, required_type):
                 raise TypeErrorWithMessage(f"Argument must be of type {required_type.__name__}")
             return func(arg)
+
         return wrapper
+
     return decorator
 
 
@@ -54,5 +59,5 @@ def my_function():
     print("Hello, world!")
 
 
-my_function()  # prints "surprise!"
-
+if __name__ == '__main__':
+    my_function()  # prints "surprise!"

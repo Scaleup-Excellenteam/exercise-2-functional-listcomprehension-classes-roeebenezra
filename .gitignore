@@ -2,6 +2,7 @@
 # Untrack files
 #
 
-venv
+/venv/
 __pycache__
-.idea
+.idea/
+.gitignore

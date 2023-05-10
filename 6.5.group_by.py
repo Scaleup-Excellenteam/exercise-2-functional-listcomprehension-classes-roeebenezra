@@ -12,14 +12,15 @@ def group_by(func, iterable):
     return result
 
 
-# Group a list of strings by their length
-result = group_by(len, ["hi", "bye", "yo", "try"])
-print(result)  # Output: {2: ["hi", "yo"], 3: ["bye", "try"]}
+if __name__ == '__main__':
+    # Group a list of strings by their length
+    result = group_by(len, ["hi", "bye", "yo", "try"])
+    print(result)  # Output: {2: ["hi", "yo"], 3: ["bye", "try"]}
 
-# Group a list of numbers by their parity
-result = group_by(lambda x: x % 2, [1, 2, 3, 4, 5, 6, 7, 8, 9])
-print(result)  # Output: {1: [1, 3, 5, 7, 9], 0: [2, 4, 6, 8]}
+    # Group a list of numbers by their parity
+    result = group_by(lambda x: x % 2, [1, 2, 3, 4, 5, 6, 7, 8, 9])
+    print(result)  # Output: {1: [1, 3, 5, 7, 9], 0: [2, 4, 6, 8]}
 
-# Group a list of words by their first letter
-result = group_by(lambda x: x[0], ["apple", "banana", "bnan", "cherry", "date", "fig"])
-print(result)  # Output: {'a': ['apple'], 'b': ['banana'], 'c': ['cherry'], 'd': ['date'], 'f': ['fig']}
+    # Group a list of words by their first letter
+    result = group_by(lambda x: x[0], ["apple", "banana", "bnan", "cherry", "date", "fig"])
+    print(result)  # Output: {'a': ['apple'], 'b': ['banana'], 'c': ['cherry'], 'd': ['date'], 'f': ['fig']}

@@ -68,18 +68,19 @@ class PostOffice:
         return matching_messages
 
 
-# create a post office with some users
-users = ['alice', 'bob', 'charlie']
-po = PostOffice(users)
+if __name__ == '__main__':
+    # create a post office with some users
+    users = ['alice', 'bob', 'charlie']
+    po = PostOffice(users)
 
-# send some messages
-po.send_message('alice', 'bob', 'hello')
-po.send_message('charlie', 'alice', 'urgent message!', urgent=True)
-po.send_message('bob', 'charlie', 'important message!')
+    # send some messages
+    po.send_message('alice', 'bob', 'hello')
+    po.send_message('charlie', 'alice', 'urgent message!', urgent=True)
+    po.send_message('bob', 'charlie', 'important message!')
 
-# read some messages from inboxes
-print(po.read_inbox('bob'))
-print(po.read_inbox('charlie', 1))
+    # read some messages from inboxes
+    print(po.read_inbox('bob'))
+    print(po.read_inbox('charlie', 1))
 
-# search for messages with a keyword
-print(po.search_inbox('alice', 'urgent'))
+    # search for messages with a keyword
+    print(po.search_inbox('alice', 'urgent'))

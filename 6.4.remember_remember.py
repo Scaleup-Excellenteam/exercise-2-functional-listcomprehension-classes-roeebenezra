@@ -29,6 +29,5 @@ def decode_image_message(image_path):
     return message
 
 
-print(decode_image_message("resources/code.png"))
-
-
+if __name__ == "__main__":
+    print(decode_image_message("resources/code.png"))
